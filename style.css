@@ -1,0 +1,33 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 1px;
+    width: 300px;
+    height: 300px;
+}
+
+
+.grid div {
+    width: 20px;
+    height: 20px;
+}
+
+.shooter {
+    background-image: url('images/sp_ship.jpg');
+    background-size: cover;
+}
+
+.invader {
+    background-image: url('images/sp_invader.jpg');
+    background-size: cover;
+}
+
+.boom {
+    background-image: url('images/sp_explosion.jpg');
+    background-size: cover;
+}
+
+.laser {
+    background-image: url('images/sp_laser.jpg');
+    background-size: cover;
+}
