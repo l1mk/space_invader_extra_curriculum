@@ -7,15 +7,15 @@
     <title>Space Invader</title>
 </head>
 <body>
-
-
-    <button id="start-pause">Start</button>
-    <button id="reset">Reset</button>
+    <div class="header">
+        <h1>Cut Invader</h1>
+        <nav>Top Score: <span id="top">None</span></nav>
+    </div>
+    <h3 id="score">Score: </h3><span id="result">0</span></div>
+    <h3 id="time">Time: </h3><span id="timer">0</span></div>
     <br>
-    <h3><div id="score">Score: <span id="result">0</span></div></h3>
-    <h3><div id="time">Time: <span id="timer">0</span></div></h3>
     <br>
-
+    <div class="border">
     <div class="grid">
         <div></div>
         <div></div>
@@ -227,21 +227,31 @@
         <div></div>
         <div></div>
         <div></div>
+        <div class="neutral"></div>
+        <div class="neutral"></div>
+        <div class="neutral"></div>
+        <div class="neutral"></div>
+        <div class="neutral"></div>
+        <div class="neutral"></div>
         <div></div>
         <div></div>
         <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div class="neutral"></div>
+        <div class="neutral"></div>
+        <div class="neutral"></div>
+        <div class="neutral"></div>
+        <div class="neutral"></div>
+        <div class="neutral"></div>
     </div>
+</div>
+<br>
+<br>
+<button id="start-pause">Start</button>
+<button id="reset">Reset</button>
+<button id="inst-Btn">Instructions</button>
+<div id="instructions">
+<p>
+Move Scizor with the Arrows in the keyboard and slash using Space. Win by cutting all trees. If the trees get to you or the bottom of the map you Lose.
+</p>
 </body>
 </html>

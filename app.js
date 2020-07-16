@@ -2,8 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const squares = document.querySelectorAll('.grid div')
     const resultDisplay = document.querySelector('#result')
     const timer = document.querySelector('#timer')
+    const top = document.querySelector('#top')
     const startBttn = document.querySelector('#start-pause')
     const resetBttn = document.querySelector('#reset')
+    const instBtn = document.querySelector('#inst-Btn')
+    const instruction = document.querySelector('#instructions')
     let time = 0
     let width = 15
     let currentShooterIndex = 202
@@ -11,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let alienInvadersTakeDown = []
     let result = 0
     let direction = 1
+    let topScore = 0
     let invaderId
 
     //define alien
@@ -39,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         squares[currentShooterIndex].classList.add('shooter')
     }
-    document.addEventListener('keydown', moveShooter)
+   
 
     //move invaders
     function moveInvaders() {
@@ -88,6 +92,13 @@ document.addEventListener('DOMContentLoaded', () => {
         resultDisplay.textContent = 'You Win'
         alert('Good Job')
         clearInterval(invaderId)
+        document.removeEventListener('keyup', shoot)
+        document.removeEventListener('keydown', moveShooter)
+        if (topScore < time){
+            topScore = time
+            top.innerHTML = `Finish in ${topScore} Seconds by Player1`
+        }
+
         }
     }
 
@@ -132,9 +143,13 @@ document.addEventListener('DOMContentLoaded', () => {
 function start(){
     if (startBttn.textContent === 'Pause'){
         clearInterval(invaderId)
+        document.removeEventListener('keyup', shoot)
+        document.removeEventListener('keydown', moveShooter)
         startBttn.textContent = 'Start'
     } else if (startBttn.textContent === 'Start'){
         invaderId = setInterval(moveInvaders, 250)
+        document.addEventListener('keyup', shoot)
+        document.addEventListener('keydown', moveShooter)
         startBttn.textContent = 'Pause'
     }
 
@@ -171,5 +186,13 @@ function reset(){
 
     startBttn.addEventListener('click', start)
     resetBttn.addEventListener('click', reset)
-    document.addEventListener('keyup', shoot)
+    instBtn.addEventListener('click', () =>{
+        if (instBtn.innerHTML === 'Instructions'){
+         instBtn.innerHTML = 'Hide'
+         instruction.style.display = 'block'
+        } else if (instBtn.innerHTML === 'Hide'){
+         instBtn.innerHTML = 'Instructions'
+         instruction.style.display = 'none'  
+        }
+     })
 })
