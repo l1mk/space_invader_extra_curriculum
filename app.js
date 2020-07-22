@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
         squares[currentShooterIndex].classList.add('shooter')
     }
    
-
     //move invaders
     function moveInvaders() {
         const leftEdge = alienInvaders[0] % width === 0
